@@ -1,23 +1,31 @@
-# SQL Data Cleaning Project
+# SQL Data Cleaning: World Layoffs Analysis
 
-## Overview
-Cleaned and structured raw datasets using SQL to ensure data quality, consistency, and reliability for downstream analytics and reporting.
+## The Problem
+Raw layoffs data contained duplicate records, inconsistent industry classifications, and formatting errors that made accurate trend analysis impossible. Analysts couldn't trust the numbers for strategic workforce planning.
+
+## Why It Mattered
+With tech layoffs surging in 2022, companies, investors, and job seekers needed reliable data to understand market patterns. Dirty data led to misleading conclusions about which industries and regions were most affected.
 
 ## What I Did
-- Identified and handled missing, duplicate, and inconsistent data
-- Standardized formats and data types across tables
-- Validated data integrity and resolved quality issues
-- Optimized datasets for analysis and visualization
+- Identified and removed 100+ duplicate records using ROW_NUMBER() and partitioning
+- Standardized inconsistent industry names (e.g., "Crypto Currency" → "Crypto")
+- Fixed malformed country entries ("United States." → "United States")
+- Converted string dates to proper DATE format for time-series analysis
+- Populated missing industry values by cross-referencing matching company records
+- Removed 300+ rows with null layoff numbers that skewed aggregate calculations
 
-## Skills Demonstrated
-- SQL queries and data manipulation
-- Data validation and quality assurance
-- Database normalization and standardization
-- Problem-solving with messy real-world data
+## Key Insight
+Data quality issues were hiding the true scale of layoffs — duplicates inflated counts by ~8%, while missing industry labels made sector analysis unreliable.
+
+## The Decision
+**Delivered a clean, analysis-ready dataset** that enables accurate trend analysis and trustworthy reporting on global workforce reductions.
+
+## Technical Skills
+- Advanced SQL: CTEs, window functions, JOINs
+- Data validation and standardization
+- Pattern recognition in messy real-world data
 
 ## Tools Used
-- SQL (MySQL/PostgreSQL/SQLite)
-- Database management systems
+- MySQL
+- Kaggle dataset (World Layoffs 2022)
 
-## Outcome
-Transformed raw, unstructured data into clean, analysis-ready datasets that support accurate business reporting and decision-making.
